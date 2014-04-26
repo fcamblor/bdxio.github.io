@@ -1,0 +1,107 @@
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.margin-less {
+  margin: 0px 0px;
+}
+
+.logo {
+  @include responsive-image(
+    'logo_header.png', $header-desktop-logo-height, $header-desktop-logo-width,
+    'logo_header_mobile.png', $header-mobile-logo-height, $header-mobile-logo-width
+  );
+}
+
+.venue {
+  @include responsive-image(
+    'ENSEIRB - Venue.png', $venue-desktop-height, $venue-desktop-width,
+    'ENSEIRB - Venue-mobile.png', $venue-mobile-height, $venue-mobile-width
+  );
+}
+
+.theme1 {
+  background-color: $theme1-main-bgcolor;
+  color: $theme1-main-color;
+}
+
+.theme2 {
+  background-color: $theme2-main-bgcolor;
+  color: $theme2-main-color;
+}
+
+.theme3 {
+  .h3 {
+    color: $theme3-secondary-color;
+  }
+  color: $theme3-main-color;
+  background-color: $theme3-main-bgcolor;
+}
+
+.sec-t1 {
+  @include section(".theme1");
+}
+.sec-t2 {
+  @include section(".theme2");
+}
+.sec-t3 {
+  @include section(".theme3");
+}
+
+.main-title {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  font-weight: 300;
+}
+
+.icon {
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-bottom: 5px;
+}
+
+hr.spacer {
+  line-height: 0px;
+  margin: 0px;
+  border: 0px;
+  visibility: hidden;
+}
+.logistic-spacer {
+  @extend hr.spacer;
+  height: 5px;
+}
+
+.logistic-title {
+  padding-bottom: 60px;
+}
+
+.hint {
+  font-weight: 300;
+  @media (min-width: $screen-xs-min) {
+    font-size: 30px;
+  }
+  @media (max-width: $screen-xs-min) {
+    font-size: 20px;
+  }
+}
+
+.important-hint {
+  @media (min-width: $screen-xs-min) {
+    font-size: 34px;
+  }
+  @media (max-width: $screen-xs-min) {
+    font-size: 24px;
+  }
+}
+
+.more-infos {
+  font-size: 18px;
+}
+
+.phone {
+  color: $light-red;
+}
