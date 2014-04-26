@@ -19,9 +19,20 @@
 
 .venue {
   @include responsive-image(
-    'ENSEIRB - Venue.png', $venue-desktop-height, $venue-desktop-width,
-    'ENSEIRB - Venue-mobile.png', $venue-mobile-height, $venue-mobile-width
+    'ENSEIRB - Venue.png', 344px, 543px,
+    'ENSEIRB - Venue-mobile.png', 253px, 400px
   );
+}
+
+.partner-enseirb {
+  @include responsive-image(
+    'logo_einserb.png', 130px, 130px,
+    'logo_einserb.png', 130px, 130px,
+    false
+  );
+  &:hover {
+    background: image-url('logo_einserb_hover.png');
+  }
 }
 
 .theme1 {
@@ -40,22 +51,6 @@
   }
   color: $theme3-main-color;
   background-color: $theme3-main-bgcolor;
-}
-
-.sec-t1 {
-  @include section(".theme1");
-}
-.sec-t2 {
-  @include section(".theme2");
-}
-.sec-t3 {
-  @include section(".theme3");
-}
-
-.main-title {
-  padding-top: 20px;
-  padding-bottom: 30px;
-  font-weight: 300;
 }
 
 .icon {
@@ -104,4 +99,15 @@ hr.spacer {
 
 .phone {
   color: $light-red;
+}
+
+#partners ul {
+  padding-top: 20px;
+  text-align: left;
+}
+
+#partners li {
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
