@@ -26,7 +26,47 @@ div .container {
   padding-bottom: 55px;
 }
 
+.nav > li > a {
+  @media (min-width: $screen-sm-min) {
+    margin-top: $navbar-icon-desktop-margintop;
+    padding: 0px 10px 4px 4px;
+  }
+  @media (max-width: $screen-sm-min) {
+    margin-top: $navbar-icon-small-margintop;
+    padding: 4px 4px;
+    margin-top: 5px;
+  }
+}
+
+// Extended dl-horizontal class to media < 768px
+// with dl-horizontal.forced class
+// Copy-pasted dl-horizontal bootstrap styles restricted to >=768px
+// here, without restricting it to this viewport size
+// Enabling it only if you appended a "forced" class to the initial
+// dl-horizontal class
+.dl-horizontal.forced dt {
+  float: left;
+  width: 160px;
+  clear: left;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dl-horizontal.forced dd {
+  margin-left: 180px;
+}
+.dl-horizontal.forced dd:before,
+.dl-horizontal.forced dd:after {
+   content: " ";
+   /* 1 */
+   display: table;
+   /* 2 */
+ }
+.dl-horizontal.forced dd:after {
+  clear: both;
+}
+
 #logistic .dl-horizontal {
   margin-bottom: 40px;
 }
-

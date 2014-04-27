@@ -53,7 +53,7 @@
                     </h1>
                 </div>
                 <div class="col-xs-12 col-md-6">
-                    <hr class="spacer" style="height: 40px" />
+                    <hr class="spacer" style="height: 35px" />
                     <h4><img src="images/icon_calendar_white.png" class="icon" />Le 17 Octobre 2014</h4>
                     <h4><img src="images/icon_event_white.png" class="icon" />SDBX4, Un évènement de la semaine digitale</h4>
                     <h4><img src="images/icon_pointer_white.png" class="icon" />À l'ENSEIRB, Inst. polytechnique de Bordeaux</h4>
@@ -64,31 +64,34 @@
             <div class="container">
                 <div class="col-xs-12 col-md-6">
                     <h2 class="logistic-title">Logistique</h2>
-                    <dl class="dl-horizontal">
+                    <dl class="dl-horizontal forced">
                       <dt><img src="images/icon_home.png" /></dt>
                       <dd>
                           <hr class="logistic-spacer" />
-                          <span class="hint">A 10 minutes de Bordeaux</span>
+                          <span class="hint">
+                              <span class="hidden-xs">A 10 minutes de Bordeaux</span>
+                              <span class="visible-xs">A 10m de Bordeaux</span>
+                          </span>
                           <hr class="logistic-spacer" />
                           <span class="important-hint">4 amphis</span>
                       </dd>
                     </dl>
-                    <dl class="dl-horizontal">
+                    <dl class="dl-horizontal forced">
                       <dt><img src="images/icon_localisation.png" /></dt>
                       <dd>
                           <hr class="logistic-spacer" />
-                          <span class="hint">4 Tracks en parallèle</span>
+                          <span class="hint">4 Tracks<span class="hidden-xs"> en parallèle</span></span>
                           <hr class="logistic-spacer" />
                           <span class="important-hint">30 conférences</span>
                       </dd>
                     </dl>
-                    <dl class="dl-horizontal">
+                    <dl class="dl-horizontal forced">
                       <dt><img src="images/icon_user.png" /></dt>
                       <dd>
                           <hr class="logistic-spacer" />
                           <span class="hint">~15 Communautés</span>
                           <hr class="logistic-spacer" />
-                          <span class="important-hint">200~300 Développeurs</span>
+                          <span class="important-hint">220 Développeurs</span>
                       </dd>
                     </dl>
                 </div>
@@ -111,18 +114,38 @@
         <div id="partners" class="theme2">
             <div class="container">
                 <h2>Partenaires</h2>
-                <div class="col-xs-12 col-md-6 text-right more-infos">
-                    <ul class="list-inline">
-                        <li><a href="http://www.enseirb-matmeca.fr/"><img class="partner-enseirb" /></a></li>
-                        <li><img src="images/no_logo.png" /></li>
-                        <li><img src="images/no_logo.png" /></li>
-                        <li><img src="images/no_logo.png" /></li>
-                        <li><img src="images/no_logo.png" /></li>
-                        <li><img src="images/no_logo.png" /></li>
-                    </ul>
+                <div class="col-xs-12 col-md-6 text-right partners">
+                    <div class="partner">
+                        <a href="http://www.enseirb-matmeca.fr/"><img class="partner-enseirb" /></a>
+                    </div>
+                    <div class="partner">
+                        <a href="http://www.enseirb-matmeca.fr/"><img src="images/no_logo.png" /></a>
+                    </div>
+                    <div class="partner">
+                        <a href="http://www.enseirb-matmeca.fr/"><img src="images/no_logo.png" /></a>
+                    </div>
+                    <div class="partner">
+                        <a href="http://www.enseirb-matmeca.fr/"><img src="images/no_logo.png" /></a>
+                    </div>
+                    <div class="partner">
+                        <a href="http://www.enseirb-matmeca.fr/"><img src="images/no_logo.png" /></a>
+                    </div>
+                    <div class="partner">
+                        <a href="http://www.enseirb-matmeca.fr/"><img src="images/no_logo.png" /></a>
+                    </div>
                 </div>
             </div>
         </div>
+        <footer class="theme4">
+            <div class="container">
+                <div class="col-xs-12 col-md-6">
+                    <a class="navbar-brand" href="#"><img class="footer-logo" /></a>
+                </div>
+                <div class="col-xs-12 col-md-6 copyright">
+                    © Copyright 2014 BDX.io - Tous droits réservés
+                </div>
+            </div>
+        </footer>
 
 
         <!-- build:js scripts/vendor.js -->

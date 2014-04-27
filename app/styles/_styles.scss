@@ -12,23 +12,29 @@
 
 .logo {
   @include responsive-image(
-    'logo_header.png', $header-desktop-logo-height, $header-desktop-logo-width,
-    'logo_header_mobile.png', $header-mobile-logo-height, $header-mobile-logo-width
+    'logo_header.png', $header-desktop-hlogo-height, $header-desktop-hlogo-width,
+    'logo_header_mobile.png', $header-mobile-hlogo-height, $header-mobile-hlogo-width
+  );
+}
+
+.footer-logo {
+  @include responsive-image(
+    'logo_footer.png', $header-flogo-height, $header-flogo-width,
+    'logo_footer.png', $header-flogo-height, $header-flogo-width
   );
 }
 
 .venue {
   @include responsive-image(
     'ENSEIRB - Venue.png', 344px, 543px,
-    'ENSEIRB - Venue-mobile.png', 253px, 400px
+    'ENSEIRB - Venue-mobile.png', 222px, 350px
   );
 }
 
 .partner-enseirb {
   @include responsive-image(
     'logo_einserb.png', 130px, 130px,
-    'logo_einserb.png', 130px, 130px,
-    false
+    'logo_einserb.png', 130px, 130px
   );
   &:hover {
     background: image-url('logo_einserb_hover.png');
@@ -53,10 +59,37 @@
   background-color: $theme3-main-bgcolor;
 }
 
+.theme4 {
+  color: $theme4-main-color;
+  background-color: $theme4-main-bgcolor;
+}
+
 .icon {
   padding-right: 7px;
   padding-left: 7px;
   padding-bottom: 5px;
+}
+
+#home {
+  @media (min-width: $screen-md-min) {
+    height: 680px;
+    background-image: image-url('pont_bacalan_md.png');
+  }
+  @media (min-width: $screen-xs-min) and (max-width: $screen-md-min) {
+    height: 680px;
+    background-image: image-url('pont_bacalan_xs-md.png');
+  }
+  @media (max-width: $screen-xs-min) {
+    height: 525px;
+    background-image: image-url('pont_bacalan_xs.png');
+  }
+  background-position: bottom;
+  background-repeat: repeat-x;
+}
+
+.main-title h4 {
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 hr.spacer {
@@ -67,7 +100,7 @@ hr.spacer {
 }
 .logistic-spacer {
   @extend hr.spacer;
-  height: 5px;
+  height: 10px;
 }
 
 .logistic-title {
@@ -77,19 +110,19 @@ hr.spacer {
 .hint {
   font-weight: 300;
   @media (min-width: $screen-xs-min) {
-    font-size: 30px;
+    font-size: 28px;
   }
   @media (max-width: $screen-xs-min) {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
 .important-hint {
   @media (min-width: $screen-xs-min) {
-    font-size: 34px;
+    font-size: 32px;
   }
   @media (max-width: $screen-xs-min) {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
@@ -101,12 +134,22 @@ hr.spacer {
   color: $light-red;
 }
 
-#partners ul {
+span.hidden-xs {
+  @media (min-width: $screen-xs-min) {
+    display: inline !important;
+  }
+  @media (max-width: $screen-xs-min) {
+    display: none !important;
+  }
+}
+
+.partners {
   padding-top: 20px;
   text-align: left;
 }
 
-#partners li {
+.partner {
+  float: left;
   @media (min-width: $screen-xs-min) {
     padding-bottom: 10px;
     padding-right: 10px;
@@ -117,4 +160,15 @@ hr.spacer {
     padding-right: 5px;
     padding-left: 5px;
   }
+}
+
+.copyright {
+  @media (min-width: $screen-xs-min) {
+    text-align: right;
+  }
+  @media (max-width: $screen-xs-min) {
+    text-align: left;
+  }
+  font-size: 10px;
+  padding-top: 20px;
 }
