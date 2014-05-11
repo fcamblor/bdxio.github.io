@@ -13,34 +13,40 @@
 .logo {
   @include responsive-image(
     'logo_header.png', $header-desktop-hlogo-height, $header-desktop-hlogo-width,
-    'logo_header_mobile.png', $header-mobile-hlogo-height, $header-mobile-hlogo-width
+    'logo_header_mobile.png', $header-mobile-hlogo-height, $header-mobile-hlogo-width,
+    block
+  );
+}
+
+.facebook-icon {
+  @include responsive-image(
+    'btn_facebook.png', 27px, 27px,
+    'btn_facebook.png', 27px, 27px,
+    inline-block, true
   );
 }
 
 .twitter-icon {
   @include responsive-image(
     'btn_twitter.png', 27px, 27px,
-    'btn_twitter.png', 27px, 27px
+    'btn_twitter.png', 27px, 27px,
+    inline-block, true
   );
-  &:hover {
-    background: image-url('btn_twitter_hover.png');
-  }
 }
 
 .contact-icon {
   @include responsive-image(
     'btn_contact.png', 27px, 27px,
-    'btn_contact.png', 27px, 27px
+    'btn_contact.png', 27px, 27px,
+    inline-block, true
   );
-  &:hover {
-    background: image-url('btn_contact_hover.png');
-  }
 }
 
 .footer-logo {
   @include responsive-image(
     'logo_footer.png', $header-flogo-height, $header-flogo-width,
-    'logo_footer.png', $header-flogo-height, $header-flogo-width
+    'logo_footer.png', $header-flogo-height, $header-flogo-width,
+    block
   );
 }
 
@@ -52,14 +58,15 @@
   @include responsive-image(
     'logo_einserb.png', 130px, 130px,
     'logo_einserb-mobile.png', 100px, 100px,
-    true
+    block, true
   );
 }
 
 .unknown-partner {
   @include responsive-image(
     'no_logo.png', 130px, 130px,
-    'no_logo-mobile.png', 100px, 100px
+    'no_logo-mobile.png', 100px, 100px,
+    block
   );
 }
 
@@ -130,6 +137,31 @@ hr.spacer {
   margin: 0px;
   border: 0px;
   visibility: hidden;
+}
+
+.nav-menu {
+  @media (min-width: $screen-sm-min) {
+    padding-left: 50px;
+  }
+  @media (max-width: $screen-xs-max) {
+    padding-left: 0px;
+  }
+}
+
+.nav .navbar-item {
+  @media (min-width: $screen-sm-min) {
+    border-left: 1px solid #bbbbbb;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @media (max-width: $screen-xs-max) {
+    border-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+.nav .navbar-item.first {
+  border-left: 0px !important;
 }
 
 hr.title-tips-spacer {
