@@ -137,9 +137,6 @@ module.exports = function (grunt) {
             }
         },
 
-
-
-
         // Compiles Sass to CSS and generates necessary files if requested
         compass: {
             options: {
@@ -206,6 +203,20 @@ module.exports = function (grunt) {
             }
         },
 
+        // Processing AngularJS Dependency injection
+        ngAnnotate: {
+            dist: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '.tmp/concat/scripts/',
+                        src: '{,*/}*.js',
+                        dest: '.tmp/concat/scripts/'
+                    }
+                ]
+            }
+        },
+
         // Reads HTML for usemin blocks to enable smart builds that automatically
         // concat, minify and revision files. Creates configurations in memory so
         // additional tasks can operate on them
@@ -221,7 +232,10 @@ module.exports = function (grunt) {
             options: {
                 assetsDirs: ['<%= yeoman.dist %>']
             },
-            html: ['<%= yeoman.dist %>/{,*/}*.html'],
+            html: [
+                '<%= yeoman.dist %>/{,*/}*.html',
+                '<%= yeoman.dist %>/templates/{,*/}*.html'
+            ],
             css: ['<%= yeoman.dist %>/styles/{,*/}*.css']
         },
 
@@ -309,6 +323,7 @@ module.exports = function (grunt) {
                         '{,*/}*.html',
                         'fonts/{,*/}*.*',
                         'contents/{,*/}*.*',
+                        'templates/{,*/}*.html',
                         'bower_components/' + (this.includeCompass ? 'sass-' : '') + 'bootstrap/' + (this.includeCompass ? 'fonts/' : 'dist/fonts/') +'*.*'
                     ]
                 }]
@@ -395,6 +410,7 @@ module.exports = function (grunt) {
         'concurrent:dist',
         'autoprefixer',
         'concat',
+        'ngAnnotate',
         'cssmin',
         'uglify',
         'copy:dist',
