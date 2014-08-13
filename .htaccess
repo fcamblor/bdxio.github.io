@@ -254,7 +254,7 @@ AddDefaultCharset utf-8
 # ------------------------------------------------------------------------------
 <IfModule mod_rewrite.c>
 #    RewriteCond %{REQUEST_URI} !=on
-    RewriteRule ^/(.+) /$1?q=ok [PT]
+    RewriteRule ^/test /?test=ok [PT]
 </IfModule>
 
 
