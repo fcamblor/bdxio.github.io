@@ -3,7 +3,7 @@
 
 var bdxioModule = angular.module('bdxioModule', ['ngRoute', 'bdxioControllers']);
 
-bdxioModule.config(function($routeProvider) {
+bdxioModule.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/home', {
             templateUrl: 'templates/pages/home.html',
@@ -13,9 +13,15 @@ bdxioModule.config(function($routeProvider) {
             templateUrl: 'templates/pages/partners.html',
             controller: 'PartnersController'
         })
+        .when('/people', {
+            templateUrl: 'templates/pages/people.html',
+            controller: 'PeopleController'
+        })
         .otherwise({
             redirectTo: '/home'
         });
+
+    $locationProvider.hashPrefix('!');
 });
 
 bdxioModule.run(function($rootScope, $location, $anchorScroll, $timeout) {
