@@ -249,6 +249,15 @@ AddDefaultCharset utf-8
 #    RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 # </IfModule>
 
+# ------------------------------------------------------------------------------
+# | Test : adding some testing rewrite rules
+# ------------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+#    RewriteCond %{REQUEST_URI} !=on
+    RewriteRule ^/(.+) /$1?q=ok [PT]
+</IfModule>
+
+
 
 # ##############################################################################
 # # SECURITY                                                                   #
