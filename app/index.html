@@ -64,7 +64,9 @@
                         <a href="" ng-click="goto('/people')" class="dropdown-toggle navbar-item" data-toggle="dropdown">Participants <b class="caret"></b></a>
                         <a href="#!/people" style="display:none">Participants</a><!-- For indexation crawlers only -->
                         <ul class="dropdown-menu">
+                            <li><a ng-click="goto('/people', 'speakers')" class="navbar-item">Speakers</a></li>
                             <li><a ng-click="goto('/people', 'orgas')" class="navbar-item">Orgas</a></li>
+                            <li><a ng-click="goto('/people', 'jury')" class="navbar-item">Jurys CFP</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -73,6 +75,12 @@
                         <a href="http://www.twitter.com/bdxio">
                             <img class="twitter-icon" />
                             <span class="visible-xs">Twitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://lanyrd.com/2014/bdxio/">
+                            <img class="lanyrd-icon" />
+                            <span class="visible-xs">Lanyrd</span>
                         </a>
                     </li>
                     <li>
@@ -96,12 +104,15 @@
 
         <footer class="theme4" itemscope itemtype="https://schema.org/WPFooter">
             <div class="container">
-                <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-md-4">
                     <a class="navbar-brand" href="#"><img class="footer-logo" /></a>
                     <a href="https://twitter.com/bdxio" class="twitter-follow-button" data-show-count="false" data-lang="fr" data-size="large">Suivre @bdxio</a>
                     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                 </div>
-                <div class="col-xs-12 col-md-6 copyright">
+                <div class="col-xs-12 col-md-4">
+                    <a href="http://www.capgemini.com/" target="_blank"><img class="img-responsive" height="10" src="images/sponsors/Capgemini_logo_300dpi_detoure.png" /></a>
+                </div>
+                <div class="col-xs-12 col-md-4 copyright">
                     © Copyright
                     <span itemprop="copyrightYear">2014</span>
                     <span itemprop="copyrightHolder" itemscope itemtype="https://schema.org/Organization">
@@ -118,6 +129,8 @@
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/lodash/dist/lodash.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -129,20 +142,6 @@
 
             ga('create', 'UA-50374424-1', 'bdx.io');
             ga('send', 'pageview');
-        </script>
-        <script>
-// //          $(function(){
-// //              // Fixing anchor links hiding fixed top header
-// //              // See https://github.com/twbs/bootstrap/issues/1768
-// //              var shiftWindow = function() {
-// //                  var bodyPaddingTop = $("body").css("padding-top");
-// //                  scrollBy(0, -parseInt(bodyPaddingTop, 10));
-// //              };
-// //              $(window).on("hashchange", shiftWindow);
-// //              if(window.location.hash) {
-// //                  shiftWindow();
-// //              }
-// //          });
         </script>
 
         <!-- build:js scripts/plugins.js -->
@@ -162,6 +161,9 @@
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
+        <script src="scripts/errors.js"></script>
+        <script src="scripts/SpreadsheetReader.js"></script>
+        <script src="scripts/SharedData.js"></script>
         <script src="scripts/controllers.js"></script>
         <!-- endbuild -->
 </body>

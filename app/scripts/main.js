@@ -1,7 +1,7 @@
 /* global angular, ga */
 'use strict';
 
-var bdxioModule = angular.module('bdxioModule', ['ngRoute', 'bdxioControllers']);
+var bdxioModule = angular.module('bdxioModule', ['ngRoute', 'ngAnimate', 'bdxioControllers']);
 
 bdxioModule.config(function($routeProvider, $locationProvider) {
     $routeProvider
@@ -24,7 +24,7 @@ bdxioModule.config(function($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix('!');
 });
 
-bdxioModule.run(function($rootScope, $location, $anchorScroll, $timeout) {
+bdxioModule.run(function($rootScope, $location, $anchorScroll, $timeout, $q, SharedData) {
     $rootScope.goto = function(path, targetAnchorName) {
         if(path !== $location.path()) {
             ga('send', 'screenview', { 'screenName': path });
@@ -50,4 +50,11 @@ bdxioModule.run(function($rootScope, $location, $anchorScroll, $timeout) {
     $rootScope.genMailTo = function(name) {
         return 'mailto:'+name+'@bdx.io';
     };
+
+    SharedData.init({
+        offline: $location.search().offline===true
+    });
+
+    // It would be nice if we could have run() return a promise
+    // It would avoid to have to rely on SharedData.dataLoaded() on every controllers...
 });
