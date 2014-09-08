@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('bdxioModule').factory('SharedData', function ($q, $http, SpreadsheetReader) {
+angular.module('bdxioModule').factory('SharedData', function ($q, $http, SpreadsheetReader, VoxxrinReader) {
     var SharedData = {
         SPREADSHEETS: [
             {
@@ -13,7 +13,8 @@ angular.module('bdxioModule').factory('SharedData', function ($q, $http, Spreads
                         "D": "company", "E": "avatarUrl", "F": "twitter",
                         "G": "linkedin", "H": "gplus"
                     },
-                    "fieldsRequiredToConsiderFilledRow": [ "firstName", "lastName" ]
+                    "fieldsRequiredToConsiderFilledRow": [ "firstName", "lastName" ],
+                    "sortBy": [ "lastName", "firstName" ]
                 }
             },
             {
@@ -26,7 +27,8 @@ angular.module('bdxioModule').factory('SharedData', function ($q, $http, Spreads
                         "D": "company", "E": "avatarUrl", "F": "twitter",
                         "G": "linkedin", "H": "gplus"
                     },
-                    "fieldsRequiredToConsiderFilledRow": [ "firstName", "lastName" ]
+                    "fieldsRequiredToConsiderFilledRow": [ "firstName", "lastName" ],
+                    "sortBy": [ "lastName", "firstName" ]
                 }
             },
             {
@@ -40,7 +42,8 @@ angular.module('bdxioModule').factory('SharedData', function ($q, $http, Spreads
                         "G": "linkedin", "H": "gplus", "I": "blog",
                         "J": "talk1", "K": "talk2"
                     },
-                    "fieldsRequiredToConsiderFilledRow": [ "firstName", "lastName" ]
+                    "fieldsRequiredToConsiderFilledRow": [ "firstName", "lastName" ],
+                    "sortBy": [ "lastName", "firstName" ]
                 }
             },
             {
@@ -54,7 +57,7 @@ angular.module('bdxioModule').factory('SharedData', function ($q, $http, Spreads
                         "G": "imgHeight"
                     },
                     "fieldsRequiredToConsiderFilledRow": [ "active", "name", "type" ],
-                    postProcess: function(results) {
+                    "postProcess": function(results) {
                         // Grouping results by type
                         results = _.groupBy(results, "type");
 
@@ -92,13 +95,41 @@ angular.module('bdxioModule').factory('SharedData', function ($q, $http, Spreads
                 }, errorMessage("Error while fetching spreadsheet info for tab "+spreadsheet.tabId));
             });
 
+            var spreadsheetsFetched = $q.defer();
             $q.all(fetchPromises).then(function(spreadsheetInfos) {
                 _.each(spreadsheetInfos, function(spreadsheetInfo, idx){
                     self._data[SharedData.SPREADSHEETS[idx].dataField] = spreadsheetInfo;
                 });
+                spreadsheetsFetched.resolve();
+            }, rejectDeferred(spreadsheetsFetched, "Error while fetching spreadsheet data"));
+
+
+            var voxxrinFetched = $q.defer();
+            VoxxrinReader.readDaySchedule("lrdbdxio14", 0, "bdxio14").then(function(daySchedule){
+                self._data["daySchedule"] = daySchedule;
+                voxxrinFetched.resolve();
+            });
+
+            $q.all([
+                spreadsheetsFetched.promise,
+                voxxrinFetched.promise
+            ]).then(function(){
+                var daySchedule = self._data["daySchedule"];
+
+                // Updating speakers data
+                _.each(self._data["speakers"], function(speaker){
+                    speaker.talks = [];
+                    if(speaker.talk1){
+                        speaker.talks.push(daySchedule.schedule[speaker.talk1.toLowerCase()]);
+                    }
+                    if(speaker.talk2){
+                        speaker.talks.push(daySchedule.schedule[speaker.talk2.toLowerCase()]);
+                    }
+                });
+
                 self._dataLoadedDefer.resolve();
                 defer.resolve();
-            }, rejectDeferred(defer, "Error while fetching spreadsheet data"));
+            }, rejectDeferred(defer, "Error while fetching data"));
 
             return defer.promise;
         },
