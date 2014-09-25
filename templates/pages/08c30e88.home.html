@@ -100,13 +100,13 @@
         </div>
     </div>
 </div>
-<div class="theme5" id="news">
+<div class="theme5" id="newsletter">
     <div class="container">
         <div class="col-xs-12">
             <h2>Newsletters</h2>
             <ul>
                 <li ng-repeat="newsletter in newsletters" class="newsletter-item list-unstyled">
-                    <a target="_blank" class="btn btn-primary btn-lg" role="button" ng-href="newsletter.url">
+                    <a target="_blank" class="btn btn-primary btn-lg" role="button" ng-href="{{newsletter.url}}">
                         <span class="hidden-xs">{{newsletter.longLabel}}</span>
                         <span class="visible-xs">{{newsletter.shortLabel}}</span>
                     </a>
@@ -125,7 +125,7 @@
         </div>
     </div>
 </div>
-<div id="newsletter" class="theme3">
+<div class="theme3">
     <div class="container">
         <div class="col-xs-12 col-md-6" ng-show="programAvailable">
             <h2>
