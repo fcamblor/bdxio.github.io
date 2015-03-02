@@ -1,0 +1,45 @@
+<div class="collapse navbar-collapse" id="collapsed-navbar">
+    <ul class="nav navbar-nav nav-menu">
+        <li class="dropdown">
+            <a href=""  ng-click="goto('/home')" class="first dropdown-toggle navbar-item" data-toggle="dropdown">Accueil <b class="caret"></b></a>
+            <a href="#!/home" style="display:none">Accueil</a><!-- For indexation crawlers only -->
+        </li>
+
+        <li class="dropdown">
+            <a href="" ng-click="goto('/people')" class="dropdown-toggle navbar-item" data-toggle="dropdown">Participants <b class="caret"></b></a>
+            <a href="#!/people" style="display:none">Participants</a><!-- For indexation crawlers only -->
+            <ul class="dropdown-menu">
+                <li><a ng-click="goto('/people', 'orgas')" class="navbar-item">Orgas</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="http://bdx.io/2014" class="navbar-item">bdx.io - 2014</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="http://www.twitter.com/bdxio">
+                <img class="twitter-icon" />
+                <span class="visible-xs">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a href="http://lanyrd.com/2014/bdxio/">
+                <img class="lanyrd-icon" />
+                <span class="visible-xs">Lanyrd</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.facebook.com/bdxio">
+                <img class="facebook-icon" />
+                <span class="visible-xs">Facebook</span>
+            </a>
+        </li>
+        <li>
+            <a ng-href="{{genMailTo('team')}}">
+                <img class="contact-icon" />
+                <span class="visible-xs">Mail</span>
+            </a>
+        </li>
+    </ul>
+</div>
