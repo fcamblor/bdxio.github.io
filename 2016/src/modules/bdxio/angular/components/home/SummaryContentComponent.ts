@@ -9,7 +9,7 @@ export class SummaryContentComponent implements ng.IDirective {
 
                 <div class="col-sm-12 col-md-6 item-summary">
                     <div class="container-cat-summary text-center" data-sr='scale up 20% reset'>
-                        <div class="content-cat-summary">
+                        <div class="content-cat-summary design">
                             <i class="bdx-design"></i>
                             <span class="title">Design, <br> UI & UX</span>
                         </div>
@@ -29,7 +29,7 @@ export class SummaryContentComponent implements ng.IDirective {
 
                  <div class="col-sm-12 col-md-6 item-summary">
                     <div class="container-cat-summary text-center" data-sr='scale up 30% reset'>
-                        <div class="content-cat-summary">
+                        <div class="content-cat-summary backends">
                              <i class="bdx-server"></i>
                              <span class="title">Backends, <br> Cloud & BigData</span>
                         </div>
@@ -51,7 +51,7 @@ export class SummaryContentComponent implements ng.IDirective {
 
                 <div class="col-sm-12 col-md-6 item-summary">
                     <div class="container-cat-summary text-center" data-sr='scale up 40% reset'>
-                        <div class="content-cat-summary">
+                        <div class="content-cat-summary frontend">
                             <i class="bdx-phone"></i>
                             <span class="title">Frontend Web, Mobile <br> et VideoGames</span>
                         </div>
@@ -73,7 +73,7 @@ export class SummaryContentComponent implements ng.IDirective {
 
                 <div class="col-sm-12 col-md-6 item-summary">
                     <div class="container-cat-summary text-center" data-sr='scale up 50% reset'>
-                        <div class="content-cat-summary">
+                        <div class="content-cat-summary tooling">
                             <i class="bdx-tools"></i>
                             <span class="title">Tooling</span>
                         </div>
@@ -95,7 +95,7 @@ export class SummaryContentComponent implements ng.IDirective {
 
                 <div class="col-sm-12 col-md-6 item-summary">
                     <div class="container-cat-summary text-center" data-sr='scale up 60% reset'>
-                        <div class="content-cat-summary">
+                        <div class="content-cat-summary internet">
                             <i class="bdx-networks"></i>
                             <span class="title">Internet des objets <br> & marchés émergents</span>
                         </div>
@@ -113,7 +113,7 @@ export class SummaryContentComponent implements ng.IDirective {
 
                 <div class="col-sm-12 col-md-6 item-summary">
                     <div class="container-cat-summary text-center" data-sr='scale up 70% reset'>
-                        <div class="content-cat-summary">
+                        <div class="content-cat-summary dev">
                             <i class="bdx-settings"></i>
                             <span class="title">Conception, Architecture & <br> Pratiques de dev</span>
                         </div>

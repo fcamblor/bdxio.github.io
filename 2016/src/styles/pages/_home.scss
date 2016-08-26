@@ -129,11 +129,18 @@
     padding: 20px;
     border-radius: 100%;
     background: linear-gradient(219deg, #cf1633, #027d8e);
-    background-size: 400% 400%;
-
+    background-size: 400% 400% !important;
     -webkit-animation: gradient-animation 7s ease infinite;
     -moz-animation: gradient-animation 7s ease infinite;
     animation: gradient-animation 7s ease infinite;
+
+
+    &.internet { background: linear-gradient(219deg,#0d5077,#4cb7f4);}
+    &.tooling { background: linear-gradient(219deg,#7159d5,#d351ac);}
+    &.frontend { background: linear-gradient(219deg,#fff263,#ff880b);}
+    &.design { background: linear-gradient(219deg,#6eff63,#26a3c0);}
+    &.dev { background: linear-gradient(219deg,#cf5e84,#ff4242);}
+    &.backends { background: linear-gradient(219deg,#5ecfce,#7d549b);}
 
 
     i {
