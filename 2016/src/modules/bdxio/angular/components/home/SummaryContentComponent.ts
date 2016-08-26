@@ -21,6 +21,9 @@ export class SummaryContentComponent implements ng.IDirective {
                             <br>
                             Experience utilisateur.
                         </h4>
+                        <button class="btn btn-primary btn-md has-icon-left space-top-5">
+                            <i class="fa fa-eye"></i>Voir les talks
+                        </button>
                     </div>
                 </div>
 
@@ -40,6 +43,9 @@ export class SummaryContentComponent implements ng.IDirective {
                             <br>
                             Base de données NoSQL.
                         </h4>
+                         <button class="btn btn-primary btn-md has-icon-left space-top-5">
+                            <i class="fa fa-eye"></i>Voir les talks
+                        </button>
                     </div>
                 </div>
 
@@ -59,6 +65,9 @@ export class SummaryContentComponent implements ng.IDirective {
                             <br>
                             Outillage pour les jeux vidéos.
                         </h4>
+                        <button class="btn btn-primary btn-md has-icon-left space-top-5">
+                            <i class="fa fa-eye"></i>Voir les talks
+                        </button>
                     </div>
                 </div>
 
@@ -78,6 +87,9 @@ export class SummaryContentComponent implements ng.IDirective {
                              <br>
                             IDE.
                         </h4>
+                        <button class="btn btn-primary btn-md has-icon-left space-top-5">
+                            <i class="fa fa-eye"></i>Voir les talks
+                        </button>
                     </div>
                 </div>
 
@@ -93,6 +105,9 @@ export class SummaryContentComponent implements ng.IDirective {
                         <h4>
                             A la recherche des idées disruptives au service du monde de demain.
                         </h4>
+                        <button class="btn btn-primary btn-md has-icon-left space-top-5">
+                            <i class="fa fa-eye"></i>Voir les talks
+                        </button>
                     </div>
                 </div>
 
@@ -110,6 +125,9 @@ export class SummaryContentComponent implements ng.IDirective {
                             <br>
                             Principes d'artitecture.
                         </h4>
+                        <button class="btn btn-primary btn-md has-icon-left space-top-5">
+                            <i class="fa fa-eye"></i>Voir les talks
+                        </button>
                     </div>
                 </div>
             </div>
